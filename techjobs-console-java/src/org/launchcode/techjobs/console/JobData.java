@@ -140,13 +140,13 @@ public class JobData {
 
             Set<String> columns = row.keySet();
 
-            for (String column : columns) {
-                String aValue = row.get(column);
+            for (String key : row.keySet()) {
+                String aValue = row.get(key);
 
                 String lowvalue = value.toLowerCase();
                 String lowavalue = aValue.toLowerCase();
 
-                if (lowavalue.contains(lowvalue)) {
+                if (aValue.toLowerCase().contains(value.toLowerCase())) {
                     jobs.add(row);
                     break;
                 }
